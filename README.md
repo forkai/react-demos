@@ -70,7 +70,7 @@ The template syntax in React is called [JSX](http://facebook.github.io/react/doc
 ```js
 ReactDOM.render(
   <h1>Hello, world!</h1>,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -95,7 +95,7 @@ ReactDOM.render(
     })
   }
   </div>,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -112,7 +112,7 @@ var arr = [
 ];
 ReactDOM.render(
   <div>{arr}</div>,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -135,7 +135,7 @@ class HelloMessage extends React.Component {
 
 ReactDOM.render(
   <HelloMessage name="John" />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -192,7 +192,7 @@ ReactDOM.render(
     <span>hello</span>
     <span>world</span>
   </NotesList>,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -230,7 +230,7 @@ var data = 123;
 
 ReactDOM.render(
   <MyTitle title={data} />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -259,7 +259,7 @@ class MyTitle extends React.Component {
 
 ReactDOM.render(
   <MyTitle />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -294,7 +294,7 @@ class MyComponent extends React.Component {
 
 ReactDOM.render(
   <MyComponent />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -329,7 +329,7 @@ class LikeButton extends React.Component {
 
 ReactDOM.render(
   <LikeButton />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -364,7 +364,7 @@ render() {
 }
 }
 
-ReactDOM.render(<Input/>, document.getElementById('example'));
+ReactDOM.render(<Input/>, document.querySelector('#example'));
 ```
 
 More information on [official document](http://facebook.github.io/react/docs/forms.html).
@@ -403,10 +403,10 @@ class Hello extends React.Component {
     );
   }
 }
-  
+
 ReactDOM.render(
   <Hello name="world"/>,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -458,7 +458,7 @@ class UserGist extends React.Component {
 
 ReactDOM.render(
   <UserGist source="https://api.github.com/users/octocat/gists" />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 
@@ -473,7 +473,7 @@ If a React component's data is received asynchronously, we can use a Promise obj
 ```javascript
 ReactDOM.render(
   <RepoList promise={$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />,
-  document.getElementById('example')
+  document.querySelector('#example')
 );
 ```
 

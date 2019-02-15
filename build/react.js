@@ -11300,7 +11300,7 @@ TopLevelWrapper.prototype.render = function () {
  *
  *   ReactMount.render(
  *     component,
- *     document.getElementById('container')
+ *     document.querySelector('#container')
  *   );
  *
  *   <div id="container">                   <-- Supplied `container`.
@@ -19183,7 +19183,7 @@ module.exports = performanceNow;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
- * 
+ *
  */
 
 /*eslint-disable no-self-compare */

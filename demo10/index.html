@@ -9,39 +9,54 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      class Hello extends React.Component {
-        constructor(props) {
-          super(props)
-          this.state = {
-            opacity: 1.0
-          };
-        }
+      // class Hello extends React.Component {
+      //   constructor(props) {
+      //     super(props)
+      //     this.state = {
+      //       opacity: 1.0
+      //     };
+      //   }
 
-        componentDidMount() {
-          this.timer = setInterval(function () {
-            var opacity = this.state.opacity;
-            opacity -= .05;
-            if (opacity < 0.1) {
-              opacity = 1.0;
-            }
-            this.setState({
-              opacity: opacity
-            });
-          }.bind(this), 100);
-        }
+      //   componentDidMount() {
+      //     this.timer = setInterval(function () {
+      //       var opacity = this.state.opacity;
+      //       opacity -= .05;
+      //       if (opacity < 0.1) {
+      //         opacity = 1.0;
+      //       }
+      //       this.setState({
+      //         opacity: opacity
+      //       });
+      //     }.bind(this), 100);
+      //   }
 
-        render() {
-          return (
-            <div style={{opacity: this.state.opacity}}>
-              Hello {this.props.name}
-            </div>
-          );
-        }
+      //   render() {
+      //     return (
+      //       <div style={{opacity: this.state.opacity}}>
+      //         Hello {this.props.name}
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      const {useState,useEffect} = React
+      const Hello=props =>{
+        let [opacity,setOpacity] = useState(1.0)
+        useEffect(()=>{
+          setInterval( ()=> {
+            opacity =(opacity < 0.1)?1.0:(opacity - .05)
+            setOpacity(opacity);
+          }, 100);
+        })
+        return (
+            <div style={{opacity}}>
+              Hello {props.name}
+            </div>)
       }
-        
+
       ReactDOM.render(
         <Hello name="world"/>,
-        document.getElementById('example')
+        document.querySelector('#example')
       );
     </script>
   </body>
