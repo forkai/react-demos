@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="UTF-8" />
+		<script src="../build/react.development.js"></script>
+		<script src="../build/react-dom.development.js"></script>
+		<script src="../build/babel.min.js"></script>
+		<script src="../build/prop-types.js"></script>
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <script src="../build/react.development.js"></script>
-  <script src="../build/react-dom.development.js"></script>
-  <script src="../build/babel.min.js"></script>
-  <script src="../build/prop-types.js"></script>
-</head>
+	<body>
+		<div id="example"></div>
+		<script type="text/babel">
+			let data = 123
 
-<body>
-  <div id="example"></div>
-  <script type="text/babel">
+			// class MyTitle extends React.Component {
+			//   static propTypes = {
+			//     title: PropTypes.string.isRequired,
+			//   }
+			//   render() {
+			//     return <h1> {this.props.title} </h1>;
+			//   }
+			// }
 
-    var data = 123;
+			const MyTitle = props => <h1> {props.title} </h1>
 
-      // class MyTitle extends React.Component {
-      //   static propTypes = {
-      //     title: PropTypes.string.isRequired,
-      //   }
-      //   render() {
-      //     return <h1> {this.props.title} </h1>;
-      //   }
-      // }
+			MyTitle.propTypes = {
+				title: PropTypes.string.isRequired
+			}
 
-      const  MyTitle = props => <h1> {props.title} </h1>
-
-      MyTitle.propTypes = {
-          title: PropTypes.string.isRequired,
-        }
-
-      ReactDOM.render(
-        <MyTitle title={data} />,
-        document.querySelector('#example')
-      );
-
-    </script>
-</body>
-
+			ReactDOM.render(
+				<MyTitle title={data} />,
+				document.querySelector('#example')
+			)
+		</script>
+	</body>
 </html>
